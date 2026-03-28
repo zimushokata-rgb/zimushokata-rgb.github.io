@@ -590,11 +590,7 @@ ul { list-style: none; }
         <a href="tel:06-6940-0661" class="contact-phone-num">📞 06-6940-0661</a>
       </div>
 
-      <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="b87e6197-c354-49c3-a26f-224ffd59681d">
-        <input type="hidden" name="subject" value="【かたひら税理士事務所】Webお問い合わせ">
-        <input type="hidden" name="from_name" value="かたひら税理士事務所 お問い合わせフォーム">
-        <input type="hidden" name="redirect" value="https://zimushokata-rgb.github.io/contact.html?sent=true">
+      <form id="contactForm" class="contact-form">
         <div class="form-row">
           <div class="form-field">
             <label for="cf_name">お名前 <span class="required">必須</span></label>
@@ -726,13 +722,25 @@ pageTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// 送信完了メッセージ表示
-if (window.location.search.includes('sent=true')) {
-  document.getElementById('formResult').textContent = 'お問い合わせありがとうございます。内容を確認次第、ご連絡させていただきます。';
+// Contact form submission via mailto
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('cf_name').value;
+  const company = document.getElementById('cf_company').value;
+  const email = document.getElementById('cf_email').value;
+  const tel = document.getElementById('cf_tel').value;
+  const category = document.getElementById('cf_category').value;
+  const message = document.getElementById('cf_message').value;
+  const to = ['zimushokata', 'gmail.com'].join('@');
+  const subject = encodeURIComponent('【Webお問い合わせ】' + (category || '一般') + ' - ' + name + '様');
+  const body = encodeURIComponent(
+    '━━━━━━━━━━━━━━━━━━━━━━\n  かたひら税理士事務所 Webお問い合わせ\n━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+    '【お名前】\n' + name + '\n\n【会社名・屋号】\n' + (company || '未記入') + '\n\n【メールアドレス】\n' + email + '\n\n【電話番号】\n' + (tel || '未記入') + '\n\n【ご相談内容】\n' + (category || '未選択') + '\n\n【お問い合わせ内容】\n' + message + '\n'
+  );
+  window.location.href = 'mail' + 'to:' + to + '?subject=' + subject + '&body=' + body;
+  document.getElementById('formResult').textContent = 'メールソフトが起動します。内容をご確認の上、送信してください。';
   document.getElementById('formResult').className = 'form-result success';
-  document.getElementById('formResult').style.display = 'block';
-  document.getElementById('contactForm').style.display = 'none';
-}
+});
 </script>
 
 </body>
