@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>代表紹介 | かたひら税理士事務所</title>
+<meta name="description" content="かたひら税理士事務所 代表税理士 片平修造のご紹介。中小企業の経営者様に寄り添い、税務・会計業務を全面的にサポートいたします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================
+   CSS Variables & Reset
+   ============================ */
+:root {
+  --primary: #1b5e3b;
+  --primary-light: #2e7d52;
+  --accent: #c8a633;
+  --accent-light: #d4ba4f;
+  --accent-dark: #a88a2a;
+  --gold: #b8963e;
+  --gold-light: #d4b76a;
+  --white: #ffffff;
+  --off-white: #f5f8f5;
+  --light-bg: #eef3ee;
+  --gray: #888888;
+  --dark-gray: #333333;
+  --text: #2c2c2c;
+  --text-light: #666666;
+  --border: #d5e0d5;
+  --shadow: rgba(27, 94, 59, 0.08);
+  --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  --font-serif: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  line-height: 1.8;
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+/* ============================
+   Navigation
+   ============================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.nav.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 20px var(--shadow);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-contact-btn {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em;
+}
+
+.nav-contact-btn::after { display: none !important; }
+
+.nav-contact-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ============================
+   Page Hero
+   ============================ */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #0f3d24 60%, #0a2e1a 100%);
+  padding: 140px 2rem 60px;
+}
+.page-hero .section-label { color: var(--gold); }
+.page-hero .section-title { color: #fff !important; }
+
+/* ============================
+   Section Common
+   ============================ */
+.section {
+  padding: 100px 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 1.5rem auto 0;
+}
+
+.section-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  line-height: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================
+   About (代表紹介)
+   ============================ */
+.about {
+  background: var(--off-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-photo {
+  position: relative;
+}
+
+.about-photo-main {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(27,94,59,0.12);
+}
+
+.about-photo-main img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.about-photo-accent {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 160px;
+  height: 160px;
+  background: var(--accent);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.about-label {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.about-name-en {
+  font-size: 0.85rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.about-name {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.about-title-role {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-text {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 2.2;
+  margin-bottom: 1.5rem;
+}
+
+.about-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-info-item {
+  background: var(--white);
+  padding: 1.2rem;
+  border-radius: 10px;
+}
+
+.about-info-label {
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.about-info-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* ============================
+   CTA
+   ============================ */
+.cta {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2e1a 100%);
+  padding: 80px 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200,166,51,0.1), transparent 70%);
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.cta-text {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 2;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.cta-phone:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200,166,51,0.3);
+}
+
+.cta-mail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  padding: 18px 40px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.cta-mail:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ============================
+   Footer
+   ============================ */
+.footer {
+  background: #0a1f12;
+  padding: 60px 2rem 30px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 30px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.footer-address {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* ============================
+   Scroll Animations
+   ============================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================
+   Page Top Button
+   ============================ */
+.page-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  z-index: 100;
+  border: none;
+}
+
+.page-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.page-top:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+  }
+
+  .nav-links.active a {
+    font-size: 1.1rem;
+  }
+
+  .section { padding: 60px 1.5rem; }
+  .section-title { font-size: 1.6rem; }
+
+  .about-info-grid { grid-template-columns: 1fr; }
+
+  .footer-top { flex-direction: column; gap: 2rem; }
+
+  .cta-phone { font-size: 1.1rem; padding: 16px 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== Navigation ==================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">片</div>
+      <div class="nav-logo-text">かたひら税理士事務所</div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#features">選ばれる理由</a>
+      <a href="about.html">代表紹介</a>
+      <a href="services.html">業務内容</a>
+      <a href="flow.html">ご相談の流れ</a>
+      <a href="access.html">アクセス</a>
+      <a href="contact.html" class="nav-contact-btn">お問い合わせ</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== Page Hero ==================== -->
+<section class="page-hero">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Representative</div>
+    <h1 class="section-title" style="color:#fff;">代表紹介</h1>
+  </div>
+</section>
+
+<!-- ==================== About ==================== -->
+<section class="section about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo fade-in-left">
+        <div class="about-photo-main">
+          <img src="profile.jpg" alt="税理士 片平修造">
+        </div>
+        <div class="about-photo-accent"></div>
+      </div>
+      <div class="about-content fade-in-right">
+        <div class="about-label">REPRESENTATIVE</div>
+        <div class="about-name-en">Shuzo Katahira</div>
+        <h3 class="about-name">片平 修造</h3>
+        <div class="about-title-role">税理士 ／ かたひら税理士事務所 代表</div>
+        <p class="about-text">
+          中小企業の経営者様が本業に集中できるよう、税務・会計業務を全面的にサポートいたします。
+        </p>
+        <p class="about-text">
+          「何でも気軽に相談できる税理士」をモットーに、お客様一人ひとりの状況に合わせた最適なご提案を心がけております。税務調査対応には特に力を入れており、日頃からの適正な記帳指導と万全の準備で、お客様の大切な事業をお守りします。
+        </p>
+        <div class="about-info-grid">
+          <div class="about-info-item">
+            <div class="about-info-label">専門分野</div>
+            <div class="about-info-value">税務調査対応</div>
+          </div>
+          <div class="about-info-item">
+            <div class="about-info-label">対応業種</div>
+            <div class="about-info-value">中小企業全般</div>
+          </div>
+          <div class="about-info-item">
+            <div class="about-info-label">所在地</div>
+            <div class="about-info-value">大阪市北区</div>
+          </div>
+          <div class="about-info-item">
+            <div class="about-info-label">モットー</div>
+            <div class="about-info-value">身近な相談相手</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta">
+  <h2 class="cta-title">まずはお気軽にご相談ください</h2>
+  <p class="cta-text">初回相談は無料です。お電話またはお問い合わせフォームよりご連絡ください。</p>
+  <div class="cta-buttons">
+    <a href="tel:06-6940-0661" class="cta-phone">
+      <span class="cta-phone-icon">📞</span> 06-6940-0661
+    </a>
+    <a href="contact.html" class="cta-mail">
+      ✉ お問い合わせフォームへ
+    </a>
+  </div>
+</section>
+
+<!-- ==================== Footer ==================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-text">かたひら税理士事務所</div>
+        <div class="footer-address">
+          〒530-0041 大阪府大阪市北区天神橋2丁目北1番21号<br>
+          八千代ビル東館7階C号室<br>
+          TEL: 06-6940-0661
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">トップ</a>
+        <a href="index.html#features">選ばれる理由</a>
+        <a href="about.html">代表紹介</a>
+        <a href="services.html">業務内容</a>
+        <a href="access.html">アクセス</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 かたひら税理士事務所 All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Page Top Button -->
+<button class="page-top" id="pageTop" aria-label="ページトップへ">↑</button>
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+  observer.observe(el);
+});
+
+// Page top button
+const pageTop = document.getElementById('pageTop');
+window.addEventListener('scroll', () => {
+  pageTop.classList.toggle('visible', window.scrollY > 400);
+});
+
+pageTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

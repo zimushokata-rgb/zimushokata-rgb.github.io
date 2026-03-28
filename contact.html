@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | かたひら税理士事務所</title>
+<meta name="description" content="かたひら税理士事務所へのお問い合わせ。初回相談は無料です。お電話またはフォームよりお気軽にご連絡ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================
+   CSS Variables & Reset
+   ============================ */
+:root {
+  --primary: #1b5e3b;
+  --primary-light: #2e7d52;
+  --accent: #c8a633;
+  --accent-light: #d4ba4f;
+  --accent-dark: #a88a2a;
+  --gold: #b8963e;
+  --gold-light: #d4b76a;
+  --white: #ffffff;
+  --off-white: #f5f8f5;
+  --light-bg: #eef3ee;
+  --gray: #888888;
+  --dark-gray: #333333;
+  --text: #2c2c2c;
+  --text-light: #666666;
+  --border: #d5e0d5;
+  --shadow: rgba(27, 94, 59, 0.08);
+  --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  --font-serif: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  line-height: 1.8;
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+/* ============================
+   Navigation
+   ============================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.nav.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 20px var(--shadow);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-contact-btn {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em;
+}
+
+.nav-contact-btn::after { display: none !important; }
+
+.nav-contact-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ============================
+   Page Hero
+   ============================ */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #0f3d24 60%, #0a2e1a 100%);
+  padding: 140px 2rem 60px;
+}
+.page-hero .section-label { color: var(--gold); }
+.page-hero .section-title { color: #fff !important; }
+
+/* ============================
+   Section Common
+   ============================ */
+.section {
+  padding: 100px 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 1.5rem auto 0;
+}
+
+.section-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  line-height: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================
+   Contact Form
+   ============================ */
+.contact-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-phone-bar {
+  background: var(--primary);
+  color: var(--white);
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-phone-bar span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-phone-num {
+  color: var(--gold-light) !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.contact-phone-num:hover {
+  opacity: 0.8;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.required {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--off-white);
+  transition: var(--transition);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(27,94,59,0.1);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-field select {
+  appearance: auto;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-submit {
+  background: var(--primary);
+  color: var(--white);
+  padding: 16px 60px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+}
+
+.btn-submit:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(27,94,59,0.25);
+}
+
+.form-result {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: none;
+}
+
+.form-result.success {
+  display: block;
+  color: var(--primary);
+}
+
+.form-result.error {
+  display: block;
+  color: #e53935;
+}
+
+/* ============================
+   Footer
+   ============================ */
+.footer {
+  background: #0a1f12;
+  padding: 60px 2rem 30px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 30px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.footer-address {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* ============================
+   Scroll Animations
+   ============================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   Page Top Button
+   ============================ */
+.page-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  z-index: 100;
+  border: none;
+}
+
+.page-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.page-top:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+  }
+
+  .nav-links.active a {
+    font-size: 1.1rem;
+  }
+
+  .section { padding: 60px 1.5rem; }
+  .section-title { font-size: 1.6rem; }
+
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 1.5rem; }
+  .contact-phone-bar { flex-direction: column; text-align: center; }
+
+  .footer-top { flex-direction: column; gap: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== Navigation ==================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">片</div>
+      <div class="nav-logo-text">かたひら税理士事務所</div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#features">選ばれる理由</a>
+      <a href="about.html">代表紹介</a>
+      <a href="services.html">業務内容</a>
+      <a href="flow.html">ご相談の流れ</a>
+      <a href="access.html">アクセス</a>
+      <a href="contact.html" class="nav-contact-btn">お問い合わせ</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== Page Hero ==================== -->
+<section class="page-hero">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Contact</div>
+    <h1 class="section-title" style="color:#fff;">お問い合わせ</h1>
+  </div>
+</section>
+
+<!-- ==================== Contact Form ==================== -->
+<section class="section" style="background: var(--off-white);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-desc">初回相談は無料です。下記フォームまたはお電話にてお気軽にお問い合わせください。</p>
+    </div>
+
+    <div class="contact-wrapper fade-in">
+      <div class="contact-phone-bar">
+        <span>お電話でのお問い合わせ</span>
+        <a href="tel:06-6940-0661" class="contact-phone-num">📞 06-6940-0661</a>
+      </div>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf_name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="cf_name" name="name" required placeholder="例：山田 太郎">
+          </div>
+          <div class="form-field">
+            <label for="cf_company">会社名・屋号</label>
+            <input type="text" id="cf_company" name="company" placeholder="例：株式会社〇〇">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf_email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="cf_email" name="email" required placeholder="例：info@example.com">
+          </div>
+          <div class="form-field">
+            <label for="cf_tel">電話番号</label>
+            <input type="tel" id="cf_tel" name="tel" placeholder="例：06-1234-5678">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="cf_category">ご相談内容</label>
+            <select id="cf_category" name="category">
+              <option value="">選択してください</option>
+              <option value="税務顧問">税務顧問について</option>
+              <option value="税務調査">税務調査対応について</option>
+              <option value="確定申告">確定申告について</option>
+              <option value="会社設立">会社設立について</option>
+              <option value="記帳代行">記帳代行について</option>
+              <option value="経営相談">経営・資金繰り相談</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="cf_message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="cf_message" name="message" rows="6" required placeholder="ご相談内容をご記入ください"></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-submit">送信する</button>
+        </div>
+        <div id="formResult" class="form-result"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Footer ==================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-text">かたひら税理士事務所</div>
+        <div class="footer-address">
+          〒530-0041 大阪府大阪市北区天神橋2丁目北1番21号<br>
+          八千代ビル東館7階C号室<br>
+          TEL: 06-6940-0661
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">トップ</a>
+        <a href="index.html#features">選ばれる理由</a>
+        <a href="about.html">代表紹介</a>
+        <a href="services.html">業務内容</a>
+        <a href="access.html">アクセス</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 かたひら税理士事務所 All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Page Top Button -->
+<button class="page-top" id="pageTop" aria-label="ページトップへ">↑</button>
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+  observer.observe(el);
+});
+
+// Page top button
+const pageTop = document.getElementById('pageTop');
+window.addEventListener('scroll', () => {
+  pageTop.classList.toggle('visible', window.scrollY > 400);
+});
+
+pageTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Contact form submission via mailto
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('cf_name').value;
+  const company = document.getElementById('cf_company').value;
+  const email = document.getElementById('cf_email').value;
+  const tel = document.getElementById('cf_tel').value;
+  const category = document.getElementById('cf_category').value;
+  const message = document.getElementById('cf_message').value;
+  const to = ['zimushokata', 'gmail.com'].join('@');
+  const subject = encodeURIComponent('【Webお問い合わせ】' + (category || '一般') + ' - ' + name + '様');
+  const body = encodeURIComponent(
+    '━━━━━━━━━━━━━━━━━━━━━━\n  かたひら税理士事務所 Webお問い合わせ\n━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+    '【お名前】\n' + name + '\n\n【会社名・屋号】\n' + (company || '未記入') + '\n\n【メールアドレス】\n' + email + '\n\n【電話番号】\n' + (tel || '未記入') + '\n\n【ご相談内容】\n' + (category || '未選択') + '\n\n【お問い合わせ内容】\n' + message + '\n'
+  );
+  window.location.href = 'mail' + 'to:' + to + '?subject=' + subject + '&body=' + body;
+  document.getElementById('formResult').textContent = 'メールソフトが起動します。内容をご確認の上、送信してください。';
+  document.getElementById('formResult').className = 'form-result success';
+});
+</script>
+
+</body>
+</html>

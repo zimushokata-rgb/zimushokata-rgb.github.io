@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かたひら税理士事務所 | 大阪市北区の税理士 片平修造</title>
+<meta name="description" content="大阪市北区天神橋の税理士事務所。税務調査対応・中小企業の税務顧問はかたひら税理士事務所にお任せください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================
+   CSS Variables & Reset
+   ============================ */
+:root {
+  --primary: #1b5e3b;
+  --primary-light: #2e7d52;
+  --accent: #c8a633;
+  --accent-light: #d4ba4f;
+  --accent-dark: #a88a2a;
+  --gold: #b8963e;
+  --gold-light: #d4b76a;
+  --white: #ffffff;
+  --off-white: #f5f8f5;
+  --light-bg: #eef3ee;
+  --gray: #888888;
+  --dark-gray: #333333;
+  --text: #2c2c2c;
+  --text-light: #666666;
+  --border: #d5e0d5;
+  --shadow: rgba(27, 94, 59, 0.08);
+  --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  --font-serif: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  line-height: 1.8;
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+/* ============================
+   Navigation
+   ============================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.nav.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 20px var(--shadow);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-contact-btn {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em;
+}
+
+.nav-contact-btn::after { display: none !important; }
+
+.nav-contact-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ============================
+   Hero Section
+   ============================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary) 0%, #0f3d24 60%, #0a2e1a 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(200,166,51,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to top, var(--white), transparent);
+  z-index: 2;
+}
+
+.hero-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.hero-content {
+  padding-top: 80px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+}
+
+.hero-catch {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-catch .accent {
+  color: var(--accent-light);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 2;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200,166,51,0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-outline:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+
+.hero-image {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  width: 420px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.hero-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero-photo-decoration {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+/* ============================
+   Section Common
+   ============================ */
+.section {
+  padding: 100px 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 1.5rem auto 0;
+}
+
+.section-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  line-height: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================
+   Features (強み)
+   ============================ */
+.features {
+  background: var(--white);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--off-white);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px var(--shadow);
+  border-color: var(--border);
+}
+
+.feature-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.5rem;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.feature-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.feature-text {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+/* ============================
+   About (代表紹介)
+   ============================ */
+.about {
+  background: var(--off-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-photo {
+  position: relative;
+}
+
+.about-photo-main {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(27,94,59,0.12);
+}
+
+.about-photo-main img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.about-photo-accent {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  background: var(--accent);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.about-label {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.about-name-en {
+  font-size: 0.85rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.about-name {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.about-title-role {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-text {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 2.2;
+  margin-bottom: 1.5rem;
+}
+
+.about-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-info-item {
+  background: var(--white);
+  padding: 1.2rem;
+  border-radius: 10px;
+}
+
+.about-info-label {
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.about-info-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* ============================
+   Services (業務内容)
+   ============================ */
+.services {
+  background: var(--white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px var(--shadow);
+  transform: translateY(-3px);
+}
+
+.service-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.4;
+  line-height: 1;
+  min-width: 50px;
+}
+
+.service-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+.service-content p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ============================
+   Numbers (実績)
+   ============================ */
+.numbers {
+  background: var(--primary);
+  padding: 80px 2rem;
+}
+
+.numbers-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.number-item {}
+
+.number-value {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.number-value span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.number-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.05em;
+}
+
+/* ============================
+   Flow (ご相談の流れ)
+   ============================ */
+.flow {
+  background: var(--off-white);
+}
+
+.flow-steps {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 39px;
+  width: 2px;
+  height: 100%;
+  background: var(--border);
+}
+
+.flow-step {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.flow-step:last-child { margin-bottom: 0; }
+
+.flow-step-num {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  background: var(--white);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+.flow-step-content {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.flow-step-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.flow-step-content p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ============================
+   Access (アクセス)
+   ============================ */
+.access {
+  background: var(--white);
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.access-info {
+  background: var(--off-white);
+  padding: 3rem;
+  border-radius: 16px;
+}
+
+.access-office-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.access-table {
+  width: 100%;
+}
+
+.access-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.access-table th,
+.access-table td {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.access-table th {
+  color: var(--gray);
+  font-weight: 500;
+  width: 80px;
+  letter-spacing: 0.05em;
+}
+
+.access-table td {
+  color: var(--text);
+}
+
+.access-table td a {
+  color: var(--accent);
+}
+
+.access-table td a:hover {
+  text-decoration: underline;
+}
+
+.access-map {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px var(--shadow);
+  height: 100%;
+  min-height: 400px;
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: none;
+}
+
+/* ============================
+   CTA (お問い合わせ)
+   ============================ */
+.cta {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2e1a 100%);
+  padding: 80px 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200,166,51,0.1), transparent 70%);
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.cta-text {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 2;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.cta-phone:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200,166,51,0.3);
+}
+
+.cta-phone-icon {
+  font-size: 1.2rem;
+}
+
+.cta-mail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  padding: 18px 40px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.cta-mail:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ============================
+   Footer
+   ============================ */
+.footer {
+  background: #0a1f12;
+  padding: 60px 2rem 30px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 30px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.footer-address {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* ============================
+   Scroll Animations
+   ============================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 1024px) {
+  .hero-content { padding-top: 120px; }
+  .hero-catch { font-size: 2.2rem; }
+
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .access-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+  }
+
+  .nav-links.active a {
+    font-size: 1.1rem;
+  }
+
+  .section { padding: 60px 1.5rem; }
+  .section-title { font-size: 1.6rem; }
+  .hero-catch { font-size: 1.8rem; }
+  .hero-sub { font-size: 0.9rem; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+  .number-value { font-size: 2.2rem; }
+
+  .about-info-grid { grid-template-columns: 1fr; }
+
+  .flow-step { gap: 1rem; }
+  .flow-step-num { width: 60px; height: 60px; min-width: 60px; font-size: 1.2rem; }
+  .flow-steps::before { left: 29px; }
+
+  .access-info { padding: 2rem; }
+
+  .footer-top { flex-direction: column; gap: 2rem; }
+
+  .cta-phone { font-size: 1.1rem; padding: 16px 30px; }
+}
+
+/* ============================
+   Page Top Button
+   ============================ */
+.page-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  z-index: 100;
+  border: none;
+}
+
+.page-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.page-top:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ============================
+   Contact Form
+   ============================ */
+.contact-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-phone-bar {
+  background: var(--primary);
+  color: var(--white);
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-phone-bar span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-phone-num {
+  color: var(--gold-light) !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.contact-phone-num:hover {
+  opacity: 0.8;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.required {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--off-white);
+  transition: var(--transition);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(27,94,59,0.1);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-field select {
+  appearance: auto;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-submit {
+  background: var(--primary);
+  color: var(--white);
+  padding: 16px 60px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+}
+
+.btn-submit:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(27,94,59,0.25);
+}
+
+.form-result {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: none;
+}
+
+.form-result.success {
+  display: block;
+  color: var(--primary);
+}
+
+.form-result.error {
+  display: block;
+  color: #e53935;
+}
+
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 1.5rem; }
+  .contact-phone-bar { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== Navigation ==================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-text">かたひら税理士事務所</div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#features">選ばれる理由</a>
+      <a href="#about">代表紹介</a>
+      <a href="#services">業務内容</a>
+      <a href="#pricing">料金表</a>
+      <a href="access.html">アクセス</a>
+      <a href="contact.html" class="nav-contact-btn">お問い合わせ</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== Hero ==================== -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">大阪市北区の税理士事務所</div>
+      <h1 class="hero-catch">
+        経営者の<span class="accent">「不安」</span>を<br>
+        <span class="accent">「安心」</span>に変える。
+      </h1>
+      <p class="hero-sub">
+        税務調査に強い税理士が、中小企業の経営を<br>
+        税務・会計の両面からしっかりサポートいたします。
+      </p>
+      <div class="hero-buttons">
+        <a href="tel:06-6940-0661" class="btn btn-primary">
+          📞 06-6940-0661
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          ✉ お問い合わせフォームへ
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Features ==================== -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Strengths</div>
+      <h2 class="section-title">選ばれる3つの理由</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🤝</div>
+        <h3 class="feature-title">経営者に寄り添う</h3>
+        <p class="feature-text">
+          数字の報告だけではありません。<br>
+          経営者のお悩みに真摯に向き合い、<br>
+          共に考え、共に歩むパートナーです。
+        </p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">迅速・丁寧な対応</h3>
+        <p class="feature-text">
+          お問い合わせには迅速にお応えし、<br>
+          専門用語を使わずわかりやすく<br>
+          丁寧にご説明いたします。
+        </p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🛡️</div>
+        <h3 class="feature-title">税務調査に強い</h3>
+        <p class="feature-text">
+          元国税調査官としての経験を活かし、<br>
+          事前準備から当日立会い、交渉まで<br>
+          一貫してお客様をお守りします。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== About (代表者紹介) ==================== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Profile</div>
+      <h2 class="section-title">代表者紹介</h2>
+      <div class="section-line"></div>
+    </div>
+    <!-- 写真（上） -->
+    <div class="fade-in" style="text-align:center;margin-bottom:2.5rem;">
+      <div style="display:inline-block;overflow:hidden;border-radius:12px;box-shadow:0 10px 30px rgba(27,94,59,0.12);">
+        <img src="profile.png" alt="代表 片平"
+             style="width:450px;height:auto;object-fit:cover;object-position:top center;display:block;">
+      </div>
+    </div>
+
+    <!-- 自己紹介（下） -->
+    <div class="fade-in" style="max-width:700px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <div class="about-label">REPRESENTATIVE</div>
+        <div class="about-name">片平</div>
+        <div class="about-title-role">かたひら税理士事務所　代表</div>
+      </div>
+
+      <p class="about-text">
+        国税局・税務署の調査官として約30年間、法人税等の税務調査に従事。多種多様な業種の調査を担当し、調査手法・視点を熟知しています。
+      </p>
+      <p class="about-text">
+        国税退職後、税理士事務所にて約2年間の実務経験を積み、令和5年にかたひら税理士事務所を開業しました。
+      </p>
+
+      <div class="about-info-grid" style="margin-top:2rem;">
+        <div class="about-info-item">
+          <div class="about-info-label">国税経験</div>
+          <div class="about-info-value">約30年</div>
+        </div>
+        <div class="about-info-item">
+          <div class="about-info-label">開業</div>
+          <div class="about-info-value">令和5年</div>
+        </div>
+        <div class="about-info-item">
+          <div class="about-info-label">専門分野</div>
+          <div class="about-info-value">法人税・税務調査</div>
+        </div>
+        <div class="about-info-item">
+          <div class="about-info-label">対応エリア</div>
+          <div class="about-info-value">大阪市北区 他</div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <h4 style="font-family:var(--font-serif);font-size:1rem;color:var(--primary);margin-bottom:0.8rem;">強み</h4>
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:0.9rem;color:var(--text-light);line-height:2;padding-left:1.2em;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">✓</span>元国税調査官としての実務経験に基づく的確な判断</li>
+          <li style="font-size:0.9rem;color:var(--text-light);line-height:2;padding-left:1.2em;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">✓</span>お客様の状況に応じた実務重視のサポート</li>
+          <li style="font-size:0.9rem;color:var(--text-light);line-height:2;padding-left:1.2em;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">✓</span>幅広い業種に対応</li>
+          <li style="font-size:0.9rem;color:var(--text-light);line-height:2;padding-left:1.2em;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">✓</span>突然の税務調査にも迅速かつ冷静に対応</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Services (業務内容) ==================== -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Services</div>
+      <h2 class="section-title">業務内容</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">法人・個人のお客様に幅広く対応いたします。</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-num">01</div>
+        <div class="service-content">
+          <h3>法人・個人 決算税務申告</h3>
+          <p>法人税・所得税・消費税の申告書作成から提出まで一貫して対応。正確な決算処理で安心の申告をサポートします。</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">02</div>
+        <div class="service-content">
+          <h3>節税対策・税務アドバイス</h3>
+          <p>決算前の事前対策や役員報酬の最適化など、お客様の状況に合わせた節税提案と税務相談を行います。</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">03</div>
+        <div class="service-content">
+          <h3>記帳代行・経理サポート</h3>
+          <p>日々の記帳業務から試算表の作成、経営分析まで。会計ソフトの導入支援・入力指導も対応します。</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">04</div>
+        <div class="service-content">
+          <h3>税務調査対応</h3>
+          <p>元国税調査官の経験を活かし、事前対策から立会いまで一貫対応。調査官の視点を踏まえた的確なサポートを行います。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Pricing (料金表) ==================== -->
+<section class="section" id="pricing" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Price</div>
+      <h2 class="section-title">料金表</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">すべて税抜価格です。お客様の状況に応じて最適なプランをご提案いたします。</p>
+    </div>
+
+    <!-- 法人顧問 -->
+    <div class="fade-in" style="margin-bottom:3rem;">
+      <h3 style="font-family:var(--font-serif);font-size:1.3rem;color:var(--primary);margin-bottom:1.5rem;text-align:center;">法人顧問契約</h3>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 16px var(--shadow);">
+          <thead>
+            <tr style="background:var(--primary);color:var(--white);">
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:left;">年間売上額</th>
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:right;">月額顧問料</th>
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:right;">決算・申告料</th>
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:right;">消費税申告料</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;font-size:0.9rem;">1,000万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">25,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">125,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">25,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+              <td style="padding:12px 16px;font-size:0.9rem;">3,000万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">30,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">150,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">30,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;font-size:0.9rem;">5,000万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">35,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">175,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">35,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+              <td style="padding:12px 16px;font-size:0.9rem;">1億以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">40,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">200,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">40,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;font-size:0.9rem;">3億以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">50,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">250,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">50,000円</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;font-size:0.9rem;">5億以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">60,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">300,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">60,000円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.8rem;text-align:center;">※訪問回数（毎月/2ヶ月/3ヶ月/来所）により月額が変動します。5億超は別途お見積もり。</p>
+    </div>
+
+    <!-- 個人顧問 -->
+    <div class="fade-in" style="margin-bottom:3rem;">
+      <h3 style="font-family:var(--font-serif);font-size:1.3rem;color:var(--primary);margin-bottom:1.5rem;text-align:center;">個人顧問契約</h3>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 16px var(--shadow);">
+          <thead>
+            <tr style="background:var(--primary);color:var(--white);">
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:left;">年間売上額</th>
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:right;">月額顧問料</th>
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:right;">決算料</th>
+              <th style="padding:14px 16px;font-size:0.85rem;font-weight:600;text-align:right;">消費税申告料</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;font-size:0.9rem;">500万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">20,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">40,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">20,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+              <td style="padding:12px 16px;font-size:0.9rem;">1,000万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">25,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">50,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">25,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;font-size:0.9rem;">3,000万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">25,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">100,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">25,000円</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+              <td style="padding:12px 16px;font-size:0.9rem;">5,000万以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">35,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">140,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">35,000円</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;font-size:0.9rem;">1億以下</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">45,000円〜</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">225,000円</td>
+              <td style="padding:12px 16px;font-size:0.9rem;text-align:right;">45,000円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.8rem;text-align:center;">※訪問回数により月額が変動します。1億超は別途お見積もり。</p>
+    </div>
+
+    <!-- オプション -->
+    <div class="fade-in" style="margin-bottom:2rem;">
+      <h3 style="font-family:var(--font-serif);font-size:1.3rem;color:var(--primary);margin-bottom:1.5rem;text-align:center;">主なオプション料金</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div style="background:var(--white);padding:1.5rem;border-radius:12px;box-shadow:0 4px 16px var(--shadow);">
+          <h4 style="font-size:0.95rem;color:var(--primary);margin-bottom:1rem;font-family:var(--font-serif);">記帳代行（月額）</h4>
+          <p style="font-size:0.85rem;color:var(--text-light);line-height:1.9;">50仕訳以下：5,000円<br>以降50仕訳毎：+5,000円</p>
+        </div>
+        <div style="background:var(--white);padding:1.5rem;border-radius:12px;box-shadow:0 4px 16px var(--shadow);">
+          <h4 style="font-size:0.95rem;color:var(--primary);margin-bottom:1rem;font-family:var(--font-serif);">給与計算（月額）</h4>
+          <p style="font-size:0.85rem;color:var(--text-light);line-height:1.9;">基本料：2,000円<br>1人あたり：1,200円</p>
+        </div>
+        <div style="background:var(--white);padding:1.5rem;border-radius:12px;box-shadow:0 4px 16px var(--shadow);">
+          <h4 style="font-size:0.95rem;color:var(--primary);margin-bottom:1rem;font-family:var(--font-serif);">年末調整・法定調書</h4>
+          <p style="font-size:0.85rem;color:var(--text-light);line-height:1.9;">源泉所得税管理：年額 6,000円<br>年末調整：1人あたり 2,500円<br>法定調書・給与支払報告書：各5,000円</p>
+        </div>
+        <div style="background:var(--white);padding:1.5rem;border-radius:12px;box-shadow:0 4px 16px var(--shadow);">
+          <h4 style="font-size:0.95rem;color:var(--primary);margin-bottom:1rem;font-family:var(--font-serif);">税務調査立会い</h4>
+          <p style="font-size:0.85rem;color:var(--text-light);line-height:1.9;">半日：30,000円<br>1日：60,000円<br>※交通費・宿泊費は別途</p>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-top:1.5rem;text-align:center;">※確定申告スポット料金、修正申告、譲渡所得等の料金は別途お問い合わせください。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta">
+  <h2 class="cta-title">まずはお気軽にご相談ください</h2>
+  <p class="cta-text">初回相談は無料です。お電話またはお問い合わせフォームよりご連絡ください。</p>
+  <div class="cta-buttons">
+    <a href="tel:06-6940-0661" class="cta-phone">
+      <span class="cta-phone-icon">📞</span> 06-6940-0661
+    </a>
+    <a href="contact.html" class="cta-mail">
+      ✉ お問い合わせフォームへ
+    </a>
+  </div>
+</section>
+
+<!-- ==================== Footer ==================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-text">かたひら税理士事務所</div>
+        <div class="footer-address">
+          〒530-0041 大阪府大阪市北区天神橋2丁目北1番21号<br>
+          八千代ビル東館7階C号室<br>
+          TEL: 06-6940-0661
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#top">トップ</a>
+        <a href="#features">選ばれる理由</a>
+        <a href="#about">代表紹介</a>
+        <a href="#services">業務内容</a>
+        <a href="#pricing">料金表</a>
+        <a href="access.html">アクセス</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 かたひら税理士事務所 All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Page Top Button -->
+<button class="page-top" id="pageTop" aria-label="ページトップへ">↑</button>
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+  observer.observe(el);
+});
+
+// Page top button
+const pageTop = document.getElementById('pageTop');
+window.addEventListener('scroll', () => {
+  pageTop.classList.toggle('visible', window.scrollY > 400);
+});
+
+pageTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offsetTop = target.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
