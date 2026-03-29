@@ -576,7 +576,11 @@ ul { list-style: none; }
         <a href="tel:06-6940-0661" class="contact-phone-num">📞 06-6940-0661</a>
       </div>
 
-      <form id="contactForm" class="contact-form">
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/zimushokata@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="【Webお問い合わせ】かたひら税理士事務所">
+        <input type="hidden" name="_next" value="https://zimushokata-rgb.github.io/contact.html?sent=1">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
         <div class="form-row">
           <div class="form-field">
             <label for="cf_name">お名前 <span class="required">必須</span></label>
@@ -709,24 +713,14 @@ pageTop.addEventListener('click', () => {
 });
 
 // Contact form submission via mailto
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('cf_name').value;
-  const company = document.getElementById('cf_company').value;
-  const email = document.getElementById('cf_email').value;
-  const tel = document.getElementById('cf_tel').value;
-  const category = document.getElementById('cf_category').value;
-  const message = document.getElementById('cf_message').value;
-  const to = ['zimushokata', 'gmail.com'].join('@');
-  const subject = encodeURIComponent('【Webお問い合わせ】' + (category || '一般') + ' - ' + name + '様');
-  const body = encodeURIComponent(
-    '━━━━━━━━━━━━━━━━━━━━━━\n  かたひら税理士事務所 Webお問い合わせ\n━━━━━━━━━━━━━━━━━━━━━━\n\n' +
-    '【お名前】\n' + name + '\n\n【会社名・屋号】\n' + (company || '未記入') + '\n\n【メールアドレス】\n' + email + '\n\n【電話番号】\n' + (tel || '未記入') + '\n\n【ご相談内容】\n' + (category || '未選択') + '\n\n【お問い合わせ内容】\n' + message + '\n'
-  );
-  window.location.href = 'mail' + 'to:' + to + '?subject=' + subject + '&body=' + body;
-  document.getElementById('formResult').textContent = 'メールソフトが起動します。内容をご確認の上、送信してください。';
-  document.getElementById('formResult').className = 'form-result success';
-});
+// 送信完了メッセージ表示
+if (window.location.search.includes('sent=1')) {
+  const result = document.getElementById('formResult');
+  if (result) {
+    result.textContent = 'お問い合わせを受け付けました。担当者よりご連絡いたします。';
+    result.className = 'form-result success';
+  }
+}
 </script>
 
 </body>
